@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Piruza Lalayan</title>
+	<link rel="stylesheet" type="text/css" href="task_1.css">
+</head>
+<body>
+	<div class="main-container">
+		<div>
+			<textarea cols="40" rows="10" type="text" id="container-text" oninput="countingSymbols()"></textarea>
+		</div>
+		<div>
+			<button class="container-button" onclick="colorChange()">Change Color</button>
+		</div>
+	</div>
+		<div class="container-div">
+			<div id="container-first-div"></div>
+			<div id="container-second-div"></div>
+			<div id="container-third-div"></div>
+		</div>	
+	<script type="text/javascript">
+        function colorChange() {
+            var arr = new Array("A", "B", "C", "D", "E", "F", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9");
+            var colorArr = new Array();
+            for (var i = 0; i < 6; i++) {
+                var equation = Math.floor(Math.random() * (arr.length - 1)) + 1;
+
+                var colorValue = arr[equation];
+                colorArr.push( colorValue );
+            }
+
+            var colorStr = colorArr.join("");
+
+            var color = "#"+colorStr;
+
+            document.getElementsByTagName("body")[0].style.backgroundColor = color;
+        }
+
+        function countingSymbols() {
+            var text = document.getElementById("container-text").value;
+            var count = 0;
+            for (var i = 0; i < text.length; i++) {
+                count++;
+            }
+                
+            document.getElementById("container-first-div").innerHTML = "Symbols Count"+ " "+ count;
+            console.log(count);
+
+            var countSentence = text.split(". ").length - 1;
+            document.getElementById("container-second-div").innerHTML = "Sentence Count"+ " "+ countSentence;
+
+            var numWord = 0;
+            for (var i = 0; i < text.length; i++) {
+                var countWord = text[i];
+                    
+                if ( countWord == " ") {
+                    numWord += 1;
+                }
+            }
+            document.getElementById("container-third-div").innerHTML = "Word Count"+ " "+ numWord;
+        }
+	</script>
+</body>
+</html>
