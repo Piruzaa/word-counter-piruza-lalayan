@@ -44,9 +44,8 @@
             }
                 
             document.getElementById("container-first-div").innerHTML = "Symbols Count"+ " "+ count;
-            console.log(count);
 
-            var countSentence = text.split(".").length - 1;
+            var countSentence = text.split(/[.!?]/).filter(Boolean).length - 1;
             document.getElementById("container-second-div").innerHTML = "Sentence Count"+ " "+ countSentence;
 
             var numWord = 0;
