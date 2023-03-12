@@ -48,15 +48,9 @@
             var countSentence = text.split(/[.!?]/).filter(Boolean).length - 1;
             document.getElementById("container-second-div").innerHTML = "Sentence Count"+ " "+ countSentence;
 
-            var numWord = 0;
-            for (var i = 0; i < text.length; i++) {
-                var countWord = text[i];
-                    
-                if ( countWord == " ") {
-                    numWord += 1;
-                }
-            }
-            document.getElementById("container-third-div").innerHTML = "Word Count"+ " "+ numWord;
+            var symbol = /\s+/gi;
+            var countWord = text.trim().replace(symbol, ' ').split(' ').length;
+            document.getElementById("container-third-div").innerHTML = "Word Count"+ " "+ countWord;
         }
 	</script>
 </body>
