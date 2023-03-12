@@ -1,0 +1,205 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+}
+
+.main-container {
+    background: linear-gradient(90deg, #754d8b 0%, #4e5992 100%);
+    height: inherit;
+}
+
+.container-box {
+    height: inherit;
+}
+
+.main-container-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: inherit;
+}
+
+.container-button {
+    width: 100%;
+    margin-top: 50px;
+}
+
+.container-btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+#button {
+    --b: 3px;
+    --s: .45em;
+    --color: #e1e5ed;
+    padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+    color: var(--color);
+    --_p: var(--s);
+    background:
+        conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--color) 0)
+        var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+    transition: .3s linear, color 0s, background-color 0s;
+    outline: var(--b) solid #0000;
+    outline-offset: .6em;
+    font-size: 16px;
+    border: 0;
+    touch-action: manipulation;
+    width: 200px;
+    cursor: pointer;
+}
+
+#button:hover,
+
+#button:focus-visible{
+  --_p: 0px;
+  outline-color: var(--color);
+  outline-offset: .05em;
+}
+
+#button:active {
+  background: var(--color);
+  color: #fff;
+}
+
+.container-div {
+    width: 40%;
+    border: 5px solid #ffffffa3;
+    box-shadow: 0px 31px 35px -26px #080c21;
+    background: #ffffff05;
+    border-radius: 10px;
+    padding: 10px;
+    display: none;
+}
+
+.first-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.first-container-child {
+    width: 25%;
+}
+
+#temperature {
+    font-size: 25px;
+}
+
+.first-container-child-2 {
+    line-height: 1.5;
+}
+
+.container-image {
+    width: 100%;
+}
+
+.second-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 30px;
+    padding: 15px;
+}
+
+.second-child {
+    width: 12%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.color {
+    color: #fff;
+}
+
+#click-button  {
+  align-self: center;
+  background-color: #fff;
+  background-image: none;
+  background-position: 0 90%;
+  background-repeat: repeat no-repeat;
+  background-size: 4px 3px;
+  border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+  border-style: solid;
+  border-width: 2px;
+  box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
+  box-sizing: border-box;
+  color: #41403e;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Neucha, sans-serif;
+  font-size: 1rem;
+  line-height: 23px;
+  outline: none;
+  padding: .75rem;
+  text-decoration: none;
+  transition: all 235ms ease-in-out;
+  border-bottom-left-radius: 15px 255px;
+  border-bottom-right-radius: 225px 15px;
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 225px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin: 0 auto;
+  display: none;
+}
+
+#click-button:hover {
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+  transform: translate3d(0, 2px, 0);
+}
+
+#click-button:focus {
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
+}
+@media only screen and (max-width: 768px) {
+    div #container-div {
+        width: 80%;
+        border: 3px solid #ffffffa3;
+        border-radius: 10px;
+        display: none;
+        padding: unset;
+    }
+
+    div#button {
+        width: 80%;
+    }
+
+    div.first-container{
+        padding-top: 25px;
+        font-size: 15px;
+    }
+
+    div.second-container{
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-top: 0;
+    }
+
+    div.second-child{
+        width: 25%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+
+    div#temperature {
+        font-size: 18px;
+    } 
+}
